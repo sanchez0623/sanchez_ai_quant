@@ -1,0 +1,14 @@
+# ===== AI量化投资课程 - 依赖清单 =====
+# 基础依赖（第1周起）
+akshare>=1.14.0
+pandas>=2.0.0
+numpy>=1.24.0
+matplotlib>=3.7.0
+
+# 后续课程会逐步添加：
+# scikit-learn     # 第2周：机器学习
+# plotly           # 第5周：交互式图表
+# ta-lib           # 第8周：技术指标库（需要单独安装C库）
+# flask            # 第15周：Web服务
+# openai           # 第3周：LLM API
+# requests         # 第3周：HTTP请求
