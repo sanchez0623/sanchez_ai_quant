@@ -97,3 +97,32 @@ class QuantPrompts:
     "confidence": 0到1的小数
 }}
 """
+
+    @staticmethod
+    def earnings_report_analysis(earnings_text: str, stock_name: str = "") -> str:
+        """
+        财报摘要情绪分析Prompt
+
+        earnings_text: 财报摘要或新闻文本
+        stock_name: 股票名称（可选）
+        """
+        # Provide context header only when stock name is present.
+        # 仅在提供股票名称时输出上下文标题。
+        name_line = f"公司/股票: {stock_name}\n" if stock_name else ""
+
+        return f"""
+你是一位资深财务分析师。请基于以下财报摘要，判断情绪与影响。
+要求：只基于输入文本做判断，不要编造未提供的数据。
+
+## 财报摘要
+{name_line}{earnings_text}
+
+## 返回格式（严格JSON）
+{{
+    "sentiment": "positive/negative/neutral",
+    "sentiment_cn": "利好/利空/中性",
+    "impact_score": -10到10的整数（正数=利好，负数=利空），
+    "key_points_cn": ["关键要点1", "关键要点2", "关键要点3"],
+    "confidence": 0到1的小数
+}}
+"""

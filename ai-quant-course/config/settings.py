@@ -33,9 +33,12 @@ def _load_dotenv():
 # 方式2（推荐）：从 .env / 环境变量读取
 _load_dotenv()
 DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY", "")
+KIMI_API_KEY = os.getenv("KIMI_API_KEY", "")
 
 # 如何设置环境变量：
 # Mac/Linux: 在 ~/.bashrc 或 ~/.zshrc 中添加：
 #   export DEEPSEEK_API_KEY="sk-xxxxxxxxxxxxxxxxxxxxxxxx"
+#   export KIMI_API_KEY="sk-xxxxxxxxxxxxxxxxxxxxxxxx"
 # Windows: 在命令行中执行：
 #   setx DEEPSEEK_API_KEY "sk-xxxxxxxxxxxxxxxxxxxxxxxx"
+#   setx KIMI_API_KEY "sk-xxxxxxxxxxxxxxxxxxxxxxxx"
